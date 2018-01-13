@@ -3,9 +3,8 @@ package coupledsims;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+import stringProcessors.HalloweenCommandProcessor;
 import veto.PropertyChangeVetoer;
-
-import StringProcessors.HalloweenCommandProcessor;
 
 public class ASimulationCoupler implements PropertyChangeListener {
 	HalloweenCommandProcessor observingSimulation;

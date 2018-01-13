@@ -12,12 +12,12 @@ BeauAndersonFinalProject.java - Added Spinners to the animation section.
 
 package main;
 
+import stringProcessors.*;
+import graphics.*;
 import bus.uigen.CompleteOEFrame;
 import bus.uigen.OEFrame;
 import bus.uigen.ObjectEditor;
 import bus.uigen.uiFrame;
-import StringProcessors.*;
-import Graphics.*;
 
 public class BeauAndersonFinalProject
 {

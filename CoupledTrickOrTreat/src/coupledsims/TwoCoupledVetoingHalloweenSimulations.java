@@ -1,7 +1,7 @@
 package coupledsims;
 
+import stringProcessors.HalloweenCommandProcessor;
 import main.BeauAndersonFinalProject;
-import StringProcessors.HalloweenCommandProcessor;
 
 public class TwoCoupledVetoingHalloweenSimulations {
 	public static final String SIMULATION1_PREFIX = "1:";
