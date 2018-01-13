@@ -3,7 +3,10 @@ package graphics;
 import java.util.Vector;
 
 import util.annotations.Position;
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
 import util.annotations.Visible;
+@StructurePattern(StructurePatternNames.BEAN_PATTERN)
 
 public class ACompleteHouse implements CompleteHouse
 {

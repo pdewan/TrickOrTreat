@@ -1,5 +1,9 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+
 public abstract class AGraphic extends AShape implements PictureLabel
 {
 	int xLocation;

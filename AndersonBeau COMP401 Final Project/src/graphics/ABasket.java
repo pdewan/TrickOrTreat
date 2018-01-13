@@ -1,5 +1,10 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.IMAGE_PATTERN)
+
 public class ABasket extends AGraphic implements PictureLabel
 {
 	public ABasket (int initX, int initY, int graphicType)

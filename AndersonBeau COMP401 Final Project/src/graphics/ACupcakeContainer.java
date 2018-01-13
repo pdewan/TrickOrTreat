@@ -1,8 +1,11 @@
 package graphics;
 
 import util.annotations.Position;
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
 import util.annotations.Visible;
 import bus.uigen.ObjectEditor;
+@StructurePattern(StructurePatternNames.BEAN_PATTERN)
 
 public class ACupcakeContainer implements CupcakeContainer
 {

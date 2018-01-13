@@ -1,5 +1,9 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.BEAN_PATTERN)
 public class AConnectableAvatar extends ACompleteAvatar implements ConnectableAvatar
 {	
 	boolean isConnected;

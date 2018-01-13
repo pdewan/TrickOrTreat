@@ -1,5 +1,10 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.IMAGE_PATTERN)
+
 public class ABarrier extends AGraphic implements PictureLabel
 {
 	public ABarrier (int initX, int initY, int graphicType)

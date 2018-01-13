@@ -1,7 +1,10 @@
 package graphics;
 
 import util.annotations.Position;
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
 import util.annotations.Visible;
+@StructurePattern(StructurePatternNames.BEAN_PATTERN)
 
 public class AWheelbarrow implements Wheelbarrow
 {

@@ -1,5 +1,10 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.BEAN_PATTERN)
+
 public class AnEmptyPlot implements EmptyPlot
 {
 	PictureLabel emptyPlotGrass;

@@ -1,5 +1,10 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.VECTOR_PATTERN)
+
 public class ACompleteHouseWithCandyCollection extends ALabelCollection<CompleteHouseWithCandy> implements CompleteHouseWithCandyCollection
 {
 	public ACompleteHouseWithCandyCollection()

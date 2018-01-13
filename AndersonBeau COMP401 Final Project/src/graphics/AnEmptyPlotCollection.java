@@ -1,5 +1,9 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.VECTOR_PATTERN)
 public class AnEmptyPlotCollection extends ALabelCollection<EmptyPlot> implements EmptyPlotCollection
 {
 	public AnEmptyPlotCollection()

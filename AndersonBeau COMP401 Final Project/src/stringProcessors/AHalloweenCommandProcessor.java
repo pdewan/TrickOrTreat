@@ -13,8 +13,11 @@ import util.annotations.MaxValue;
 import util.annotations.MinValue;
 import util.annotations.StepValue;
 import util.annotations.Position;
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
 import util.annotations.Visible;
 import veto.PropertyChangeVetoer;
+@StructurePattern(StructurePatternNames.BEAN_PATTERN)
 
 public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Serializable
 {

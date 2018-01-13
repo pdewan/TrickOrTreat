@@ -1,5 +1,9 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.IMAGE_PATTERN)
 public class ACarPointedRight extends AGraphic implements PictureLabel
 {	
 	public ACarPointedRight (int initX, int initY, int graphicType)

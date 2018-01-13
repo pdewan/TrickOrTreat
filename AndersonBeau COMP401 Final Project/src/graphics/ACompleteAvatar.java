@@ -1,6 +1,9 @@
 package graphics;
 
 import util.annotations.Position;
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+@StructurePattern(StructurePatternNames.BEAN_PATTERN)
 
 public class ACompleteAvatar implements CompleteAvatar
 {

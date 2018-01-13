@@ -2,7 +2,9 @@ package graphics;
 
 import java.beans.PropertyChangeListener;
 
-public interface Shape
+import util.models.PropertyListenerRegisterer;
+
+public interface Shape extends PropertyListenerRegisterer
 {
 	public Point getLocation();
 	public int getWidth();

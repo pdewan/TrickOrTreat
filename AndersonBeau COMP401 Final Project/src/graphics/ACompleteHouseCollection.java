@@ -1,5 +1,9 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.VECTOR_PATTERN)
 public class ACompleteHouseCollection extends ALabelCollection<CompleteHouse> implements CompleteHouseCollection
 {
 	public ACompleteHouseCollection()

@@ -1,5 +1,9 @@
 package graphics;
 
+import util.annotations.StructurePattern;
+import util.annotations.StructurePatternNames;
+
+@StructurePattern(StructurePatternNames.VECTOR_PATTERN)
 public class ARoadCollection extends ALabelCollection<PictureLabel> implements PictureLabelCollection
 {	
 	public ARoadCollection()
