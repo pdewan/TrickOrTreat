@@ -13,6 +13,10 @@ BeauAndersonFinalProject.java - Added Spinners to the animation section.
 package main;
 
 import stringProcessors.*;
+import util.trace.TraceableWarning;
+import util.trace.bean.BeanTraceUtility;
+import util.trace.trickOrTreat.TrickOrTreatTraceUility;
+import util.trace.uigen.ImageYLessThanZero;
 import graphics.*;
 import bus.uigen.CompleteOEFrame;
 import bus.uigen.OEFrame;
@@ -97,6 +101,10 @@ public class BeauAndersonFinalProject
 	// is to be displayed at 0,0 - The last argument is an into from 1 to 14 for world size
 	HalloweenSimulation aNewHalloweenSim = new AHalloweenSimulation(40, 40, 1144, 720, 100, 50, 8);
 //	OEFrame simulationFrame = ObjectEditor.edit(aNewHalloweenSim);
+	// some images will be < 0
+	TraceableWarning.doNotWarn(ImageYLessThanZero.class);
+	BeanTraceUtility.setTracing();
+	TrickOrTreatTraceUility.setTracing();
 	CompleteOEFrame simulationFrame = ObjectEditor.edit(aNewHalloweenSim);
 	simulationFrame.hideMainPanel();
 	simulationFrame.setTitle(titlePrefix + "Beau Anderson's Halloween Simulation - Version 13.5");

@@ -5,6 +5,7 @@ import graphics.HalloweenSimulation;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.Serializable;
+import java.rmi.activation.ActivationGroupDesc.CommandEnvironment;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -16,6 +17,10 @@ import util.annotations.Position;
 import util.annotations.StructurePattern;
 import util.annotations.StructurePatternNames;
 import util.annotations.Visible;
+import util.trace.bean.AddedPropertyChangeListener;
+import util.trace.bean.NotifiedPropertyChangeEvent;
+import util.trace.bean.SetProperty;
+import util.trace.trickOrTreat.CommandSubmitted;
 import veto.PropertyChangeVetoer;
 @StructurePattern(StructurePatternNames.BEAN_PATTERN)
 
@@ -463,6 +468,7 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 	@Override
 	public void addPropertyChangeListener(PropertyChangeListener newListener)
 	{
+		AddedPropertyChangeListener.newCase(this, newListener);
 		listeners.add(newListener);
 	}
 	
@@ -489,19 +495,22 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 
 
 	}
+	PropertyChangeListener[] emptyPropertyChangeListenerArray = {};
 	@Override
 	public void setInputString(String newVal)
 	{
+		SetProperty.newCase(this, "InputString", newVal);
 		String oldInputString = inputString;		
 		String newInputString = newVal;
 		PropertyChangeEvent inputEvent = new PropertyChangeEvent(this, "InputString", oldInputString, newInputString);
 
 		if (checkWithAllVetoers(inputEvent) && isConnectedToSimulation())
-		processCommand(newVal);
-		else 
+			processCommand(newVal);
+		else { // shoud probably reject the set
 			inputString = newVal;
+		}
 //		PropertyChangeEvent inputEvent = new PropertyChangeEvent(this, "InputString", oldInputString, newInputString);
-
+		NotifiedPropertyChangeEvent.newCase(this, inputEvent, listeners.toArray(emptyPropertyChangeListenerArray));
 		notifyAllListeners(inputEvent);
 	}
 	
@@ -509,7 +518,7 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 	@Override
 	public void processCommand(String newInputString)
 	{
-	
+		CommandSubmitted.newCase(this, newInputString);
 		inputString = newInputString;
 		if (MyHalloweenSim == null)
 			return;

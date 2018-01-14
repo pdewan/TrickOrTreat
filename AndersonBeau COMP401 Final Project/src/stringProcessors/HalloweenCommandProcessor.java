@@ -5,9 +5,10 @@ import graphics.HalloweenSimulation;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
+import util.models.PropertyListenerRegisterer;
 import veto.PropertyChangeVetoer;
 
-public interface HalloweenCommandProcessor
+public interface HalloweenCommandProcessor extends PropertyListenerRegisterer
 {
 	public String getInputString();
 	public String getErrorMessages();
