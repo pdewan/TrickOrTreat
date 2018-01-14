@@ -1,0 +1,5 @@
+There are two main classes, TwoCoupledHaloweenSimulations and TwoCoupledVetoingSimulations.
+They couple two simulations, defined by the referenced project, AndersonBeauComp401FinalProject, in the same
+process – your task in Comp533 will be to couple simulations in (possibly an arbitrary number of)
+processes – this means you must run a different program for each process. The project uses
+a user-interface library I wrote, oeall22.jar, ObjectEditor, which is used by Beau’s code. 

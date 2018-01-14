@@ -1,0 +1,25 @@
+The main class is BeauANdersonFinalProject in the main
+package.
+
+This simulation is a project I gave to my Fall Comp 401
+(http://www.cs.unc.edu/~dewan/comp114/f10/) class. This is the code of one
+of the students in the class – Beau Anderson – who created a particularly nice simulation.
+The simulation creates two windows, a command window, and a graphics window. The
+command window is used to manipulate the objects shown in the graphics window.
+As sEach graphics window consists of (a) one or more houses, each
+with a path and a candy container; and (b) a movable avatar with a candy container. The
+move command can be used to move the avatar in both the x and y directions.
+If the feet of the avatar are in the path of a house, then the take and give commands can
+be used to transfer candies between the house and avatar containers. In addition,
+commands are provided to add and remove a house in the simulation, and undo or redo
+previous commands. The following is the syntax of the commands:
+<Command> -> <Move Command> | <Add Command> | <Remove Command> | <Take
+Command> | <Give Command> | <Undo Command> | <Redo Command>
+<Move Command> -> move <number> <number>
+<Take Command> -> take <number>
+<Give Command> -> give <number>
+<Add Command> -> addHouse
+<Remove Command> -> removeHouse
+<Undo Command> -> undo
+<Redo Command> -> redo
+
