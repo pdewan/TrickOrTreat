@@ -7,28 +7,16 @@ import stringProcessors.HalloweenCommandProcessor;
 import veto.PropertyChangeVetoer;
 
 public class AVetoingSimulationCoupler extends ASimulationCoupler implements PropertyChangeVetoer {
-	HalloweenCommandProcessor observedSimulation;
-	PropertyChangeEvent lastPropertyChangeEvent; // should be a queue in general
-	
+	public static final String VETOED_COMMAND = "undo";
 	public AVetoingSimulationCoupler (HalloweenCommandProcessor anObservedSimulaton, HalloweenCommandProcessor anObservingSimulation) {
 		super(anObservedSimulaton, anObservingSimulation);
-		observedSimulation = anObservedSimulaton;
 		anObservedSimulaton.addPropertyChangeVetoer(this);
 	}
 
 	@Override
-	public void propertyChange(PropertyChangeEvent anEvent) {
-		super.propertyChange(anEvent);
-		if (!anEvent.getPropertyName().equals("InputString")) return;
-		String newCommand = (String) anEvent.getNewValue();
-		System.out.println("Doing delayed processing of observed command:" + newCommand);
-		observedSimulation.processCommand(newCommand);
-	}
-
-	@Override
-	public boolean vetoeablePropertyChange(PropertyChangeEvent event) {
-		lastPropertyChangeEvent = event;
-		return false;
+	public boolean allowPropertyChange(PropertyChangeEvent anEvent) {
+		if (!anEvent.getPropertyName().equals("InputString")) return true;
+		return !VETOED_COMMAND.equals(anEvent.getNewValue());
 	}
 
 }

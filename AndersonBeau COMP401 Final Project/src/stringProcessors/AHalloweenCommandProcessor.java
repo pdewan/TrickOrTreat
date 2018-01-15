@@ -460,9 +460,10 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 		boolean retVal = true;
 	    for(int i = 0; i < vetoers.size(); i++)
 	    {
-	        retVal &= vetoers.get(i).vetoeablePropertyChange(event);
+	        retVal &= vetoers.get(i).allowPropertyChange(event);
+	        if (!retVal) return false;
 	    }
-	    return retVal;
+	    return true;
 	}
 
 	@Override
@@ -504,14 +505,19 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 		String newInputString = newVal;
 		PropertyChangeEvent inputEvent = new PropertyChangeEvent(this, "InputString", oldInputString, newInputString);
 
-		if (checkWithAllVetoers(inputEvent) && isConnectedToSimulation())
+		if (checkWithAllVetoers(inputEvent) && isConnectedToSimulation()) {
 			processCommand(newVal);
-		else { // shoud probably reject the set
-			inputString = newVal;
+			NotifiedPropertyChangeEvent.newCase(this, inputEvent, listeners.toArray(emptyPropertyChangeListenerArray));
+			notifyAllListeners(inputEvent);
+		} else {
+			System.out.println ("Property cnange vetoed");
 		}
-//		PropertyChangeEvent inputEvent = new PropertyChangeEvent(this, "InputString", oldInputString, newInputString);
-		NotifiedPropertyChangeEvent.newCase(this, inputEvent, listeners.toArray(emptyPropertyChangeListenerArray));
-		notifyAllListeners(inputEvent);
+//		else { // shoud probably reject the set
+//			inputString = newVal;
+//		}
+////		PropertyChangeEvent inputEvent = new PropertyChangeEvent(this, "InputString", oldInputString, newInputString);
+//		NotifiedPropertyChangeEvent.newCase(this, inputEvent, listeners.toArray(emptyPropertyChangeListenerArray));
+//		notifyAllListeners(inputEvent);
 	}
 	
 	boolean replay;
