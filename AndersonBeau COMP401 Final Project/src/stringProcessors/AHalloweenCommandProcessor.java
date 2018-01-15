@@ -505,8 +505,10 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 		String newInputString = newVal;
 		PropertyChangeEvent inputEvent = new PropertyChangeEvent(this, "InputString", oldInputString, newInputString);
 
-		if (checkWithAllVetoers(inputEvent) && isConnectedToSimulation()) {
-			processCommand(newVal);
+		if (checkWithAllVetoers(inputEvent)) {
+			if (isConnectedToSimulation()) {
+				processCommand(newVal);
+			}
 			NotifiedPropertyChangeEvent.newCase(this, inputEvent, listeners.toArray(emptyPropertyChangeListenerArray));
 			notifyAllListeners(inputEvent);
 		} else {
