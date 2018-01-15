@@ -6,4 +6,6 @@ The project uses the referenced project AndersonBeauComp401FinalProject,
 a user-interface library I wrote, oeall22.jar, ObjectEditor, which is used by Beau’s code. 
 
 TwoCoupledHaloweenSimulations allows all commands to be executed. TwoCoupledVetoingHalloweenSimulations
-shows how one can veto certain changes - undo commands.
+shows how one can veto certain changes - undo commands. 
+This is useful in 533 if you do extra credit to support locking, which would
+disable user input.
