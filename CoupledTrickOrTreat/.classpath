@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="D:/dewan_backup/Java/lib/oeall22.jar" sourcepath="/util/src"/>
+	<classpathentry kind="lib" path="/GraderBasics/lib/commons-configuration-1.9.jar"/>
+	<classpathentry kind="lib" path="/GraderBasics/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="/GraderBasics/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/GraderBasics/lib/diff_match_patch-current.jar"/>
+	<classpathentry kind="lib" path="/GraderBasics/lib/opencsv-2.3.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/GraderBasics"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Comp533LocalChecks"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/AndersonBeau COMP401 Final Project"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/distTeaching"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

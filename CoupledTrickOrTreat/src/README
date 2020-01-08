@@ -9,3 +9,6 @@ TwoCoupledHaloweenSimulations allows all commands to be executed. TwoCoupledVeto
 shows how one can veto certain changes - undo commands. 
 This is useful in 533 if you do extra credit to support locking, which would
 disable user input.
+
+The project includes also the file RunA1Tests, which is a template for how localchecks are run.
+These should all fail as the project does not handle distribution.
