@@ -507,12 +507,12 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 
 		if (checkWithAllVetoers(inputEvent)) {
 			if (isConnectedToSimulation()) {
-				processCommand(newVal);
+				processCommand(newVal); // changes inputString
 			}
 			NotifiedPropertyChangeEvent.newCase(this, inputEvent, listeners.toArray(emptyPropertyChangeListenerArray));
 			notifyAllListeners(inputEvent);
 		} else {
-			System.out.println ("Property cnange vetoed");
+			System.out.println ("Property change vetoed");
 		}
 //		else { // shoud probably reject the set
 //			inputString = newVal;

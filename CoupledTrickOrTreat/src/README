@@ -12,3 +12,18 @@ disable user input.
 
 The project includes also the file RunA1Tests, which is a template for how localchecks are run.
 These should all fail as the project does not handle distribution.
+
+Input the following commands in the console and see how they are translated to method calls
+ 
+ p
+ a true
+ a false
+ i true
+ atomic true
+ s "move 30 20"
+ e
+ l false
+ t true
+ t false
+ q 0
+ 

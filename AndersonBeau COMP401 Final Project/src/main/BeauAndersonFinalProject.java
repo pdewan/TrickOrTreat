@@ -81,7 +81,7 @@ public class BeauAndersonFinalProject
 //	// Display my Halloween Command Line Interface
 //	// This extended subclass overrides the token detection routine to add support for new commands
 	HalloweenCommandProcessor commandLine = new AHalloweenCommandProcessor();
-	bindAndDisplayCommandProcessor(aNewHalloweenSim, commandLine, titlePrefix, commandX, commandY);
+	bindAndDisplayCommandProcessor(aNewHalloweenSim, commandLine, titlePrefix, commandX, commandY, simulationWidth);
 	return commandLine;
 }
 	public static HalloweenSimulation createAndDisplaySimulationWithoutCommandProcessor( 
@@ -125,6 +125,22 @@ public class BeauAndersonFinalProject
 	public static void bindAndDisplayCommandProcessor(HalloweenSimulation aSimulation, 
 			HalloweenCommandProcessor commandLine, String titlePrefix, int commandX,
 			int commandY) {
+////		HalloweenCommandProcessor commandLine = new AHalloweenCommandProcessor(aNewHalloweenSim);
+//		commandLine.init(aSimulation);
+////		OEFrame commandFrame = ObjectEditor.edit(commandLine);
+//		CompleteOEFrame commandFrame = ObjectEditor.edit(commandLine);
+//		commandFrame.setLocation(commandX, commandY);
+//		commandFrame.setTitle(titlePrefix + "Halloween Simulation Command Line Interface - Version 13.5");
+////		commandFrame.setSize(1100, 210); // sets the width and height of window
+////		commandFrame.setSize(400, 210); // sets the width and height of window
+//		commandFrame.setSize(400, 210); // sets the width and height of window
+		bindAndDisplayCommandProcessor(aSimulation, commandLine, titlePrefix, commandX, commandY, 400);
+
+		
+	}
+	public static void bindAndDisplayCommandProcessor(HalloweenSimulation aSimulation, 
+			HalloweenCommandProcessor commandLine, String titlePrefix, int commandX,
+			int commandY, int aCommandWidth) {
 //		HalloweenCommandProcessor commandLine = new AHalloweenCommandProcessor(aNewHalloweenSim);
 		commandLine.init(aSimulation);
 //		OEFrame commandFrame = ObjectEditor.edit(commandLine);
@@ -132,7 +148,9 @@ public class BeauAndersonFinalProject
 		commandFrame.setLocation(commandX, commandY);
 		commandFrame.setTitle(titlePrefix + "Halloween Simulation Command Line Interface - Version 13.5");
 //		commandFrame.setSize(1100, 210); // sets the width and height of window
-		commandFrame.setSize(400, 210); // sets the width and height of window
+//		commandFrame.setSize(400, 210); // sets the width and height of window
+		commandFrame.setSize(aCommandWidth, 210); // sets the width and height of window
+
 		
 	}
 }
