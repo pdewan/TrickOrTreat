@@ -13,7 +13,8 @@ disable user input.
 The project includes also the file RunA1Tests, which is a template for how localchecks are run.
 These should all fail as the project does not handle distribution.
 
-Input the following commands in the console and see how they are translated to method calls
+Input the following commands in the console and see how they are translated to method calls. The only commands
+relevant to A1 are p, s, e.
  
  p
  a true

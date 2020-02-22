@@ -4,6 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import stringProcessors.HalloweenCommandProcessor;
+import util.trace.trickOrTreat.LocalCommandObserved;
 import veto.PropertyChangeVetoer;
 
 public class ASimulationCoupler implements PropertyChangeListener {
@@ -18,7 +19,8 @@ public class ASimulationCoupler implements PropertyChangeListener {
 	public void propertyChange(PropertyChangeEvent anEvent) {
 		if (!anEvent.getPropertyName().equals("InputString")) return;
 		String newCommand = (String) anEvent.getNewValue();
-		System.out.println("Received command:" + newCommand);
+		LocalCommandObserved.newCase(this, newCommand);
+//		System.out.println("Received command:" + newCommand);
 		observingSimulation.processCommand(newCommand);
 	}
 

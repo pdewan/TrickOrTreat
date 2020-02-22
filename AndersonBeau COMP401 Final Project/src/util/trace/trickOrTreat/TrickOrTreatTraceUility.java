@@ -14,6 +14,8 @@ public class TrickOrTreatTraceUility {
 		TraceableInfo.setPrintSource(true);
 		Tracer.setImplicitPrintKeywordKind(ImplicitKeywordKind.OBJECT_CLASS_NAME);		
 		Tracer.setKeywordPrintStatus(CommandSubmitted.class, true);
+		Tracer.setKeywordPrintStatus(LocalCommandObserved.class, true);
+
 		
 		
 	}
