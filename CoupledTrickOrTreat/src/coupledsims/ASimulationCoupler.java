@@ -10,10 +10,14 @@ import veto.PropertyChangeVetoer;
 public class ASimulationCoupler implements PropertyChangeListener {
 	HalloweenCommandProcessor observingSimulation;
 	
-	public ASimulationCoupler (HalloweenCommandProcessor anObservedSimulaton, HalloweenCommandProcessor anObservingSimulation) {
-		anObservedSimulaton.addPropertyChangeListener(this);
+//	public ASimulationCoupler (HalloweenCommandProcessor anObservedSimulaton, HalloweenCommandProcessor anObservingSimulation) {
+//		anObservedSimulaton.addPropertyChangeListener(this);
+//		observingSimulation = anObservingSimulation;
+//	}
+	public ASimulationCoupler (HalloweenCommandProcessor anObservingSimulation) {
 		observingSimulation = anObservingSimulation;
 	}
+	
 
 	@Override
 	public void propertyChange(PropertyChangeEvent anEvent) {

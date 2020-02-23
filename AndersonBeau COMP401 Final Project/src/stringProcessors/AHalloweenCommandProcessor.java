@@ -19,8 +19,10 @@ import util.annotations.StructurePatternNames;
 import util.annotations.Visible;
 import util.trace.bean.AddedPropertyChangeListener;
 import util.trace.bean.NotifiedPropertyChangeEvent;
+import util.trace.bean.RemovedPropertyChangeListener;
 import util.trace.bean.SetProperty;
 import util.trace.trickOrTreat.CommandSubmitted;
+import util.trace.trickOrTreat.ConnectedToSimulation;
 import veto.PropertyChangeVetoer;
 @StructurePattern(StructurePatternNames.BEAN_PATTERN)
 
@@ -470,7 +472,15 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 	public void addPropertyChangeListener(PropertyChangeListener newListener)
 	{
 		AddedPropertyChangeListener.newCase(this, newListener);
-		listeners.add(newListener);
+		if (!listeners.contains(newListener)) {
+			listeners.add(newListener);
+		}
+	}
+	@Override
+	public void removePropertyChangeListener(PropertyChangeListener newListener)
+	{
+		RemovedPropertyChangeListener.newCase(this, newListener);
+		listeners.remove(newListener);
 	}
 	
 	@Override
@@ -1311,6 +1321,7 @@ public class AHalloweenCommandProcessor implements HalloweenCommandProcessor, Se
 	public void setConnectedToSimulation(boolean newVal) {
     	if (newVal == connectedToSimulation)
     		return;
+    	ConnectedToSimulation.newCase(this, newVal);
 		this.connectedToSimulation = newVal;
     	notifyAllListeners(new PropertyChangeEvent(this, "ConnectedToSimulation", null, newVal));
 

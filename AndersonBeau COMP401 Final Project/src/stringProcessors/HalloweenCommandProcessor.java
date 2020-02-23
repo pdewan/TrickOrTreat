@@ -69,5 +69,6 @@ public interface HalloweenCommandProcessor extends PropertyListenerRegisterer
 	public void initSerializedObject ();
 	boolean isConnectedToSimulation();
 	void setConnectedToSimulation(boolean connectedToSimulation);
+	void removePropertyChangeListener(PropertyChangeListener newListener);
 
 }
