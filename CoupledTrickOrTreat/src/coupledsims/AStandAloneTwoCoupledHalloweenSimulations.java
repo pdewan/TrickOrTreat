@@ -164,7 +164,7 @@ public class AStandAloneTwoCoupledHalloweenSimulations extends AnAbstractSimulat
 	 * exists.
 	 */
 	public void delaySends(int aMillisecondDelay) {
-		// invoke setDelaySends so getDelaySends can be used to determine the delay
+		// getDelay() can be used to determine the delay
 		// in other parts of the program
 		super.delaySends(aMillisecondDelay);
 	}
