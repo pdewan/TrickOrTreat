@@ -28,6 +28,7 @@ public class BeauAndersonFinalProject
 	public static void main(String[] args)
 	{
 		createSimulation("", 0, 0, 1200, 765, 100, 100);
+		
 	}
 //	public static HalloweenCommandProcessor createSimulation(String titlePrefix, 
 //				int simulationX, 
